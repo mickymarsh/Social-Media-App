@@ -1,0 +1,90 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.Register {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(149, 150, 154);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    .Card {
+        background-color: white;
+        width: 50%;
+        display: flex;
+        border-radius: 10px;
+        min-height: 500px;
+
+        .Left {
+            flex: 1;
+            border-radius: 10px;
+            background: linear-gradient(white,rgba(62, 62, 61, 0.723)) ,url("https://images.stockcake.com/public/8/f/5/8f54cf56-9e78-4ba8-be71-eb54b701df2a_large/joyful-friends-embrace-stockcake.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: aliceblue;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Ensure content starts from the top */
+
+            h1 {
+                margin-top: 100px;
+                color: black;
+                background-color: rgb(236, 242, 242);
+            }
+            p {
+                text-align: left;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            button {
+                align-self: flex-start; /* Aligns button to the right */
+                margin-left: 10px;
+                background-color: rgb(191, 53, 53);
+                color: white;
+                width: 120px;
+                height: 40px;
+                font-size: 15px;
+            }
+        }
+
+        .Right {
+            flex: 1;
+            color: aliceblue;
+            display: flex;
+            flex-direction: column;
+
+
+            h1 {
+                margin-top: 100px;
+                background-color: black;
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 0px;
+
+                input {
+                    height: 25px;
+                    width: 300px;
+                    margin-bottom: 5px;
+                    border-top: 1px solid lightgray;
+                }
+                button {
+                    height: 40px;
+                    width: 120px;
+                    font-size: 15px;
+                    align-self: center;
+                    margin-bottom: 20px;
+                    background-color: rgb(191, 53, 53);
+                    color: white;
+                }
+            }
+        }
+    }
+}
