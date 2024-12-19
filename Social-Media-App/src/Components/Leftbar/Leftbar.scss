@@ -1,40 +1,47 @@
+@import "../../style.scss";
+
 .Leftbar {
-    flex: 2;
-    border-right: 2px solid lightgray;
-    position: sticky;  /* Make the left bar sticky */
-    top: 38px;  
-    height: calc(100vh - 38px);
-    overflow: scroll;
 
-    &::-webkit-scrollbar{
-        display: none;
-    }
-    
-    .Container {
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 210px;
-        
-        hr {
-            margin: 20px 0px;
-            border: none;
-            height: 0.5px;
-            background-color: lightgrey;
+    @include themify($themes){
+        background-color: themed("bg");
+        color: themed("textColor");
+        flex: 2;
+        border-right: 2px solid themed("border");
+        position: sticky;  /* Make the left bar sticky */
+        top: 38px;  
+        height: calc(100vh - 38px);
+        overflow: scroll;
+
+        &::-webkit-scrollbar{
+            display: none;
         }
-
-        .Items {
+        
+        .Container {
+            padding: 20px;
             display: flex;
-            align-items: center;
-            gap: 10px;
-
-            img {
-                /* Add styles for img if needed */
+            flex-direction: column;
+            gap: 20px;
+            width: 210px;
+            
+            hr {
+                margin: 20px 0px;
+                border: none;
+                height: 0.5px;
+                background-color: themed("border");
             }
 
-            span {
-                /* Add styles for span if needed */
+            .Items {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                img {
+                    /* Add styles for img if needed */
+                }
+
+                span {
+                    /* Add styles for span if needed */
+                }
             }
         }
     }
