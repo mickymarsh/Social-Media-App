@@ -4,11 +4,14 @@ import Navbar from './Components/Navbar/Navbar';
 import Leftbar from './Components/Leftbar/Leftbar';
 import Rightbar from './Components/Rightbar/Rightbar';
 
+
 import "./Style.scss"
 
 function Layout(){
+
+
     return(
-        <div className = "Dark-theme">
+        <div className = "theme-dark">
           <Navbar></Navbar>
           <div style={{display: "flex"}}>
             <Leftbar></Leftbar>

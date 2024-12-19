@@ -1,4 +1,8 @@
+@import "../../Style.scss";
+
 .Navbar {
+    @include themify($themes){
+
     height: 30px;
     display: flex;
     padding: 3px;
@@ -6,7 +10,7 @@
     border-bottom: 2px solid #d1cece;
     position: sticky;
     top: 0;
-    background-color: white;
+    background-color: themed("bg");
 
     .Left {
         display: flex;
@@ -34,7 +38,7 @@
             justify-content: center; 
             border: 1px solid lightgray;
             padding-left: 5px;
-        
+            
             input {
                 height: 20px; /* Smaller height to fit navbar */
                 width: 200px; /* Adjust width as needed */
@@ -63,4 +67,6 @@
             padding-right: 5px;
         }
     }
+}
+
 }
