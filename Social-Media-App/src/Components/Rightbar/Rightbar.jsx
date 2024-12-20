@@ -1,5 +1,13 @@
 import "./Rightbar.scss"
+
+import { useContext } from "react";
+import { AuthContext } from "../../Context/authContext.jsx"; 
+
+
 function Rightbar(){
+
+    const { currentUser, login } = useContext(AuthContext);
+
     return(
         <div className="Rightbar"> 
 
@@ -41,32 +49,32 @@ function Rightbar(){
 
                     <div className="user">
                         <div className="userinfo">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyW2MAFrFnfa_bT1jSttLbmvfotJcqQyCCGg&s" alt="Profile" alt="" />
-                            <span><b>Marsh karunaratne</b> changed cover picture</span>
+                            <img src={currentUser.propic} alt="" />
+                            <span><b>{currentUser.name}</b> changed cover picture</span>
                         </div>
                         <span>1 min ago</span>
                     </div>
 
                     <div className="user">
                         <div className="userinfo">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyW2MAFrFnfa_bT1jSttLbmvfotJcqQyCCGg&s" alt="Profile" alt="" />
-                            <span><b>Marsh karunaratne</b> liked a post</span>
+                            <img src={currentUser.propic} alt="" />
+                            <span><b>{currentUser.name}</b> liked a post</span>
                         </div>
                         <span>1 min ago</span>
                     </div>
 
                     <div className="user">
                         <div className="userinfo">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyW2MAFrFnfa_bT1jSttLbmvfotJcqQyCCGg&s" alt="Profile" alt="" />
-                            <span><b>Marsh karunaratne</b> liked a comment</span>
+                            <img src={currentUser.propic} alt="" />
+                            <span><b>{currentUser.name}</b> liked a comment</span>
                         </div>
                         <span>1 min ago</span>
                     </div>
 
                     <div className="user">
                         <div className="userinfo">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyW2MAFrFnfa_bT1jSttLbmvfotJcqQyCCGg&s" alt="Profile" alt="" />
-                            <span><b>Marsh karunaratne</b> posted</span>
+                            <img src={currentUser.propic} alt="" />
+                            <span><b>{currentUser.name}</b> posted</span>
                         </div>
                         <span>1 min ago</span>
                     </div>

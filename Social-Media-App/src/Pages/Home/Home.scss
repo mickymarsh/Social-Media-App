@@ -1,0 +1,16 @@
+@import "../../style.scss";
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+.Home{
+    @include themify($themes){
+        background-color: themed("bgSoft");
+        padding: 0;
+        margin: 0;
+        height: 100%;
+    }
+}

@@ -4,14 +4,16 @@ import Register from "./Pages/Register/Register";
 import Layout from './Layout';
 import Profile from "./Pages/Profile/Profile";
 import Home from "./Pages/Home/Home";
+import { AuthContext } from "./Context/authContext.jsx"; 
+import { useContext } from "react";
+
 
 function App(){
-
-  let isloggedin = true;
-
+  const { currentUser } = useContext(AuthContext);
+  
   const Protectedlayout = ({children}) =>
   {
-    if(!isloggedin){
+    if(!currentUser){
       return(<Navigate to="/Login"></Navigate>);
     }
     else{

@@ -11,7 +11,7 @@ $themes:(
     dark: (
         textColor: whitesmoke,
         bg: #222,
-        logo: white,
+        logo: rgb(38, 220, 193),
         bgSoft: #333,
         textColorsoft: lightgray,
         border: #444,
@@ -37,4 +37,13 @@ $themes:(
   
 @function themed($key) {
     @return map-get($theme-map, $key);
+}
+
+.Outlet{
+    @include themify($themes){
+        background-color: themed("bgSoft");
+        padding: 0;
+        margin: 0;
+        height: 100%;
+    }
 }

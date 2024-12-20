@@ -9,8 +9,18 @@ import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNone
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import SearchIcon from '@mui/icons-material/Search';
+import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
+
+import { useContext } from "react";
+import { AuthContext } from "../../Context/authContext.jsx"; 
+import { DarkModeContext } from "../../Context/darkModeContext.jsx";
 
 function Navbar(){
+
+    const { toggle, darkMode } = useContext(DarkModeContext);
+    const { currentUser, login } = useContext(AuthContext);
+
+    
 
     const userId = "123";
 
@@ -19,7 +29,7 @@ function Navbar(){
             <div className="Left">
                 <Link to={"/"}> <span> <b>FriendHive</b></span> </Link>
                 <HomeIcon></HomeIcon>
-                <BedtimeOutlinedIcon></BedtimeOutlinedIcon>
+                {darkMode ? <BedtimeOutlinedIcon onClick={toggle}></BedtimeOutlinedIcon> : <WbSunnyOutlinedIcon onClick={toggle}></WbSunnyOutlinedIcon>}
                 <GridViewOutlinedIcon></GridViewOutlinedIcon>
                 <div className="Search">
                     <SearchIcon></SearchIcon>
@@ -30,8 +40,8 @@ function Navbar(){
                 <Person2OutlinedIcon></Person2OutlinedIcon>
                 <EmailOutlinedIcon></EmailOutlinedIcon>
                 <NotificationsNoneOutlinedIcon></NotificationsNoneOutlinedIcon>
-                <Link to={`/Profile/${userId}`}>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyW2MAFrFnfa_bT1jSttLbmvfotJcqQyCCGg&s" alt="Profile" />
+                <Link to={`/Profile/${currentUser.id}`}>
+                    <img src={currentUser?.propic || "https://via.placeholder.com/50"} alt="Profile" />
                 </Link>
 
             </div>
