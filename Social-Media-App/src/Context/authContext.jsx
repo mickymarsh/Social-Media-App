@@ -12,7 +12,8 @@ function AuthContextProvider({ children }) {
   const login = () => {
     //to do
     setCurrentUser({id:1, name:"Marsh Karunaratne", 
-        propic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyW2MAFrFnfa_bT1jSttLbmvfotJcqQyCCGg&s" 
+        propic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyW2MAFrFnfa_bT1jSttLbmvfotJcqQyCCGg&s" ,
+        coverpic:"https://images.pexels.com/photos/13440765/pexels-photo-13440765.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     })
   };
 

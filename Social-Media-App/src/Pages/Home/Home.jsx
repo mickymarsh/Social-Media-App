@@ -1,35 +1,13 @@
+import Stories from "../../Components/Stories/Stories";
+import Posts from "../../Components/Posts/Posts";
+
 import "./Home.scss"
 
 function Home(){
     return(
         <div className="Home">
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
-            <h1>home</h1>
+            <Stories></Stories>
+            <Posts></Posts>
             
         </div>
     );

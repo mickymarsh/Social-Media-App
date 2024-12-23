@@ -21,9 +21,6 @@ function Navbar(){
     const { currentUser, login } = useContext(AuthContext);
 
     
-
-    const userId = "123";
-
     return(
         <div className="Navbar">
             <div className="Left">
