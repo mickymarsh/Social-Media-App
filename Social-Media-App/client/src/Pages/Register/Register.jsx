@@ -1,17 +1,28 @@
 import { Link } from "react-router-dom";
 import "./Register.scss"
+import { useState } from "react";
 
 function Register(){
+
+    const [inputs, setInputs] = useState({
+        username:"",
+        email:"",
+        password:"",
+        name:""
+    })
+
+    const handlechange = ()=> {}
+
     return(
         <div className="Register">
             <div className="Card">
             <div className="Right">
                     <h1><b>Register</b></h1>
                     <form action="">
-                        <p><input type="text" placeholder="Full Name" /></p>
-                        <p><input type="email" placeholder="Email Address" /></p>
-                        <p><input type="text" placeholder="Username" /></p>
-                        <p><input type="password" placeholder="Password" /></p>
+                        <p><input type="text" placeholder="Username" name="username" onChange={handlechange} /></p>
+                        <p><input type="email" placeholder="Email Address" name="email" onChange={handlechange} /></p>
+                        <p><input type="password" placeholder="Password" name="password" onChange={handlechange} /></p>
+                        <p><input type="text" placeholder="Name" name="name" onChange={handlechange} /></p>
                         <button>Register</button>
                     </form>                    
                 </div>
