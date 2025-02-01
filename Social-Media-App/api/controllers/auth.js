@@ -39,7 +39,7 @@ export const login = (req, res) => {
   
       // Set the JWT token as a cookie
       res.cookie("accessToken", token, {
-        //httpOnly: true,    // Prevents JavaScript from accessing the cookie
+        httpOnly: true,    // Prevents JavaScript from accessing the cookie
         secure: process.env.NODE_ENV === "production", // Only sends the cookie over HTTPS in production
         sameSite: "None",  // Allows cross-origin requests
       });
@@ -51,7 +51,7 @@ export const login = (req, res) => {
   export const logout = (req, res) => {
     // Clear the cookie when logging out
     res.clearCookie("accessToken", {
-      //httpOnly: true,
+      httpOnly: true,
       secure: process.env.NODE_ENV === "production", // Ensure secure flag for production
       sameSite: "None",  // Matches the setting in login
     }).status(200).json("User has been logged out.");

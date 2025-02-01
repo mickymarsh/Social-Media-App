@@ -1,16 +1,43 @@
 import React from "react"
 import "./Login.scss"
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 import { AuthContext } from "../../Context/authContext.jsx"; 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 function Login(){
+
+    const navigate = useNavigate()
+
+    const [inputs, setInputs] = useState({
+        username:"",
+        password:"",
+    })
+
+    const [err, setErr] = useState(null);
+
+    const handleChange = (e) => {
+        setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+
     const { login } = useContext(AuthContext);
 
-    const handlelogin = () => {
-        login();
-    }
+    const handlelogin = async (e) => {
+        e.preventDefault(); // Prevent form submission
+        console.log("Inputs before sending:", inputs);
+      
+        try {
+          await login(inputs)
+          navigate("/")
+          console.log("logged in successfull")
+        } catch (err) {
+          console.log("Error:", err.response?.data || err); // Log any error response
+          setErr(err.response?.data || "An error occurred");
+        }
+      };
+      
+    
 
     return(
         <div className="Login">
@@ -29,8 +56,9 @@ function Login(){
                 <div className="Right">
                     <h1><b>Login</b></h1>
                     <form action="">
-                        <p><input type="text" placeholder="Username" /></p>
-                        <p><input type="password" placeholder="Password" /></p>
+                        <p><input type="text" placeholder="Username" name="username" onChange={handleChange} /></p>
+                        <p><input type="password" placeholder="Password" name="password" onChange={handleChange} /></p>
+                        {err && <p style={{ color: "red" }}>{err}</p>}
                         <button onClick={handlelogin}>Login</button>
                     </form>                    
                 </div>
